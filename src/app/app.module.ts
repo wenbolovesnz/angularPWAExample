@@ -11,11 +11,18 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducer } from './reducers/hero.reducer';
+import { effects } from './effects';
+import { HeroCreateComponent } from './hero-create/hero-create.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
+    HeroCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +30,10 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ClarityModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({
+      heroes: reducer
+    }),
+    EffectsModule.forRoot(effects),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

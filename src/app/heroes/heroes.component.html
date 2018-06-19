@@ -1,18 +1,20 @@
 <div class="content-container">
-  <h2>My Heroes <span class="badge badge-3">{{heroes.length }}</span></h2>
-
-  <div class="row">
-    <div *ngFor="let hero of heroes" class="col-lg-3 col-md-4 col-sm-12 col-xs-12" style="text-align: center; padding: 10px">
-        <a  href="javascript:void(0)" 
-            class="label label-blue" 
-            (click)="currentHero=hero"
-            [ngClass]="{'label-orange': currentHero == hero}">
-            {{hero.name | uppercase}}
-        </a>
+  <div *ngIf="newHeroes">
+      <h2>Rx Store My Heroes <span class="badge badge-3">{{ (newHeroes | async)?.length}}</span></h2>
+      <div class="row">
+        <div *ngFor="let hero of newHeroes | async" class="col-lg-3 col-md-4 col-sm-12 col-xs-12" style="text-align: center; padding: 10px">
+            <a  href="javascript:void(0)" 
+                class="label label-blue" 
+                (click)="currentHero=hero"
+                [ngClass]="{'label-orange': currentHero == hero}">
+                {{hero.name | uppercase}}
+            </a>
+        </div>
+      </div>
     </div>
-    
-  </div>
 </div>
+
+
 
 <app-hero-detail [hero]="currentHero"></app-hero-detail>
 
