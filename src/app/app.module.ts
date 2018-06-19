@@ -31,7 +31,7 @@ import { HeroCreateComponent } from './hero-create/hero-create.component';
     ClarityModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
-      heroes: reducer
+      heroState: reducer
     }),
     EffectsModule.forRoot(effects),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })

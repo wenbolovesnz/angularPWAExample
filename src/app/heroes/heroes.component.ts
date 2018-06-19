@@ -4,7 +4,7 @@ import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.state';
-import { IHeroState } from '../reducers/hero.reducer';
+import { IHeroState, selectHeroes, selectLoading } from '../reducers/hero.reducer';
 
 import * as HeroActions from '../actions/hero.actions';
 
@@ -19,8 +19,11 @@ export class HeroesComponent implements OnInit {
   
   heroState$:Observable<IHeroState>;
 
-  constructor(private heroService: HeroService, private store: Store<any>) {
-    this.heroState$ = store.select('heroes');
+  heroes$: Observable<Hero[]>;
+  loading$: Observable<boolean>;
+  constructor(private heroService: HeroService, private store: Store<AppState>) {
+    this.loading$ = store.select(selectLoading);
+    this.heroes$ = store.select(selectHeroes);
   }
 
   ngOnInit() {

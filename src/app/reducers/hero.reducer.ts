@@ -1,5 +1,6 @@
-import { Action } from '@ngrx/store'
+import { Action, createSelector } from '@ngrx/store'
 import { Hero } from '../hero';
+import { AppState } from '../app.state';
 import * as HeroActions from '../actions/hero.actions'
 
 
@@ -29,3 +30,15 @@ export function reducer(state: IHeroState = initialState, action: HeroActions.Ac
             return state;
     }
 }
+
+export const selectHeroState = (state: AppState) => state.heroState;
+
+export const selectHeroes = createSelector(
+    selectHeroState,
+    (state: IHeroState) => state.heroes
+)
+
+export const selectLoading = createSelector(
+    selectHeroState,
+    (state: IHeroState) => state.loading
+)
