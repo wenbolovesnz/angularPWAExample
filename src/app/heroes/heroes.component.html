@@ -1,8 +1,13 @@
 <div class="content-container">
-  <div *ngIf="newHeroes">
-      <h2>Rx Store My Heroes <span class="badge badge-3">{{ (newHeroes | async)?.length}}</span></h2>
+    <div *ngIf="(heroState$ | async)?.loading" class="content-area" style="text-align: center">
+            <span class="spinner">
+                    Loading...
+            </span>
+    </div>
+  <div *ngIf="(heroState$ | async)?.loading == false">
+      <h2>Rx Store My Heroes <span class="badge badge-3">{{ (heroState$ | async)?.heroes.length}}</span></h2>
       <div class="row">
-        <div *ngFor="let hero of newHeroes | async" class="col-lg-3 col-md-4 col-sm-12 col-xs-12" style="text-align: center; padding: 10px">
+        <div *ngFor="let hero of (heroState$ | async)?.heroes" class="col-lg-3 col-md-4 col-sm-12 col-xs-12" style="text-align: center; padding: 10px">
             <a  href="javascript:void(0)" 
                 class="label label-blue" 
                 (click)="currentHero=hero"
