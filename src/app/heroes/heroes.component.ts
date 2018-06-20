@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.state';
@@ -21,7 +20,7 @@ export class HeroesComponent implements OnInit {
 
   heroes$: Observable<Hero[]>;
   loading$: Observable<boolean>;
-  constructor(private heroService: HeroService, private store: Store<AppState>) {
+  constructor(private store: Store<AppState>) {
     this.loading$ = store.select(selectLoading);
     this.heroes$ = store.select(selectHeroes);
   }

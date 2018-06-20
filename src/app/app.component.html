@@ -2,13 +2,14 @@
 <div>
   <header class="header-6">
     <div class="branding">
-      <a href="..." class="nav-link">
+      <a routerLink="/dashboard" class="nav-link">
         <clr-icon shape="happy-face" class="is-inverse"></clr-icon>
         <span class="title">PWA tour</span>
       </a>
     </div>
     <div class="header-nav">
-        <a href="javascript://" class="active nav-link nav-text">Dashboard</a>
+        <a routerLink="/dashboard" class="nav-link nav-text">Dashboard</a>
+        <a routerLink="/heroes" class="nav-link nav-text">Heroes</a>
     </div>
     <div class="header-actions">
         <a href="javascript://" class="nav-link nav-icon">
@@ -16,6 +17,6 @@
         </a>
     </div>
   </header>
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet>
 </div>
 

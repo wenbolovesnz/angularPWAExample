@@ -38,6 +38,11 @@ export const selectHeroes = createSelector(
     (state: IHeroState) => state.heroes
 )
 
+export const selectTop3Heroes = createSelector(
+    selectHeroState,
+    (state: IHeroState) => [state.heroes[0], state.heroes[1], state.heroes[2]]
+)
+
 export const selectLoading = createSelector(
     selectHeroState,
     (state: IHeroState) => state.loading

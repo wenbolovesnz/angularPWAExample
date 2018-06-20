@@ -16,6 +16,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducer } from './reducers/hero.reducer';
 import { effects } from './effects';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { HeroCreateComponent } from './hero-create/hero-create.component';
     HeroesComponent,
     HeroDetailComponent,
     HeroCreateComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { HeroCreateComponent } from './hero-create/hero-create.component';
       heroState: reducer
     }),
     EffectsModule.forRoot(effects),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
