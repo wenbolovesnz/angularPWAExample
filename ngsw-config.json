@@ -20,15 +20,5 @@
         "/assets/**"
       ]
     }
-  }],
-  "dataGroups": [{
-    "name": "api",
-    "urls": ["https://cr2tl039c2.execute-api.ap-southeast-1.amazonaws.com/dev/users"],
-    "version": 1,
-    "cacheConfig": {
-      "maxSize": 9999999999,
-      "maxAge": "1d",
-      "strategy": "freshness"
-    }
   }]
 }
