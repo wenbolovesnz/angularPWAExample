@@ -9,7 +9,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.0cb6dd5ba96873651904.js",
+        "/main.7d6008a6ff496ce22604.js",
         "/polyfills.e3633a42d1123afc5fc9.js",
         "/runtime.a66f828dca56eeb90e02.js",
         "/scripts.95f494fcc365b300620d.js",
@@ -34,18 +34,7 @@
       "patterns": []
     }
   ],
-  "dataGroups": [
-    {
-      "name": "api",
-      "patterns": [
-        "https:\\/\\/cr2tl039c2\\.execute-api\\.ap-southeast-1\\.amazonaws\\.com\\/dev\\/users"
-      ],
-      "strategy": "freshness",
-      "maxSize": 9999999999,
-      "maxAge": 86400000,
-      "version": 1
-    }
-  ],
+  "dataGroups": [],
   "hashTable": {
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -56,8 +45,8 @@
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/index.html": "2cb271312a9e9547b998ef2ab6005033c8390dc4",
-    "/main.0cb6dd5ba96873651904.js": "6aab1f906b2d70a1cc7d45d7e0545f74dece9b95",
+    "/index.html": "ec9ef95577a5a6bac6e874cf8f53298c2b33f774",
+    "/main.7d6008a6ff496ce22604.js": "02e24a5784d339bc0fc832bcf6835c19ffc7c95c",
     "/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "/scripts.95f494fcc365b300620d.js": "6f0f4ec83144409c500a44dc4a599e9698136152",
