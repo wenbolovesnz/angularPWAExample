@@ -15,11 +15,10 @@ import * as HeroActions from '../actions/hero.actions';
 export class HeroesComponent implements OnInit {
 
   currentHero: Hero = null;
-  
   heroState$:Observable<IHeroState>;
-
   heroes$: Observable<Hero[]>;
   loading$: Observable<boolean>;
+  
   constructor(private store: Store<AppState>) {
     this.loading$ = store.select(selectLoading);
     this.heroes$ = store.select(selectHeroes);

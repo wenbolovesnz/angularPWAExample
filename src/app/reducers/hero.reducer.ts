@@ -16,7 +16,7 @@ const initialState : IHeroState = {
 };
 
 // Section 2
-export function reducer(state: IHeroState = initialState, action: HeroActions.Actions) {
+export function heroReducer (state: IHeroState = initialState, action: HeroActions.Actions) {
 
     // Section 3
     switch(action.type) {

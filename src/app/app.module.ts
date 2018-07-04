@@ -13,12 +13,14 @@ import { environment } from '../environments/environment';
 
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducer } from './reducers/hero.reducer';
+import { heroReducer } from './reducers/hero.reducer';
+import { appMetaReducer } from './reducers/app.reducer';
 import { effects } from './effects';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppAlertComponent } from './app-alert/app-alert.component';
 
 function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -39,6 +41,7 @@ const metaReducers: MetaReducer<any>[] = [debug];
     HeroCreateComponent,
     DashboardComponent,
     AppHeaderComponent,
+    AppAlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ const metaReducers: MetaReducer<any>[] = [debug];
     ClarityModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({
-      heroState: reducer
+      heroState: heroReducer,
+      appMetaState: appMetaReducer
     }, { metaReducers }),
     EffectsModule.forRoot(effects),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
