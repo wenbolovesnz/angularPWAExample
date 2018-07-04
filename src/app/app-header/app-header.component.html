@@ -1,0 +1,18 @@
+<clr-header class="header-6">
+  <div class="branding">
+      <a routerLink="/dashboard" class="nav-link">
+        <clr-icon shape="happy-face" class="is-inverse"></clr-icon>
+        <span class="title">PWA tour</span>
+      </a>
+    </div>
+  <div class="header-nav" [clr-nav-level]="1">
+      <a routerLink="/dashboard" 
+            class="nav-link nav-text"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" >Dashboard</a>
+      <a routerLink="/heroes" 
+            class="nav-link nav-text"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" >Heroes</a>
+  </div>
+</clr-header>

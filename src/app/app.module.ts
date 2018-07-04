@@ -18,6 +18,7 @@ import { effects } from './effects';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -37,6 +38,7 @@ const metaReducers: MetaReducer<any>[] = [debug];
     HeroDetailComponent,
     HeroCreateComponent,
     DashboardComponent,
+    AppHeaderComponent,
   ],
   imports: [
     BrowserModule,
